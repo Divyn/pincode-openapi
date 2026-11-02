@@ -1,0 +1,64 @@
+[
+  {
+    "Message": "Number of pincode(s) found:4",
+    "Status": "Success",
+    "PostOffice": [
+      {
+        "Name": "Agara",
+        "Description": null,
+        "BranchType": "Branch Post Office",
+        "DeliveryStatus": "Non-Delivery",
+        "Circle": "Karnataka",
+        "District": "Bangalore",
+        "Division": "Bangalore South",
+        "Region": "Bangalore HQ",
+        "Block": "Bangalore South",
+        "State": "Karnataka",
+        "Country": "India",
+        "Pincode": "560034"
+      },
+      {
+        "Name": "Koramangala",
+        "Description": null,
+        "BranchType": "Sub Post Office",
+        "DeliveryStatus": "Delivery",
+        "Circle": "Karnataka",
+        "District": "Bangalore",
+        "Division": "Bangalore South",
+        "Region": "Bangalore HQ",
+        "Block": "Bangalore South",
+        "State": "Karnataka",
+        "Country": "India",
+        "Pincode": "560034"
+      },
+      {
+        "Name": "Koramangala I Block",
+        "Description": null,
+        "BranchType": "Sub Post Office",
+        "DeliveryStatus": "Non-Delivery",
+        "Circle": "Karnataka",
+        "District": "Bangalore",
+        "Division": "Bangalore South",
+        "Region": "Bangalore HQ",
+        "Block": "Bangalore South",
+        "State": "Karnataka",
+        "Country": "India",
+        "Pincode": "560034"
+      },
+      {
+        "Name": "St. John's Medical College",
+        "Description": null,
+        "BranchType": "Sub Post Office",
+        "DeliveryStatus": "Non-Delivery",
+        "Circle": "Karnataka",
+        "District": "Bangalore",
+        "Division": "Bangalore South",
+        "Region": "Bangalore HQ",
+        "Block": "Bangalore South",
+        "State": "Karnataka",
+        "Country": "India",
+        "Pincode": "560034"
+      }
+    ]
+  }
+]

@@ -1,0 +1,60 @@
+[
+  {
+    "Message": "Number of Post office(s) found:4",
+    "Status": "Success",
+    "PostOffice": [
+      {
+        "Name": "Koramangala",
+        "Description": null,
+        "BranchType": "Sub Post Office",
+        "DeliveryStatus": "Delivery",
+        "Circle": "Karnataka",
+        "District": "Bangalore",
+        "Division": "Bangalore South",
+        "Region": "Bangalore HQ",
+        "State": "Karnataka",
+        "Country": "India",
+        "Pincode": "560034"
+      },
+      {
+        "Name": "Koramangala I Block",
+        "Description": null,
+        "BranchType": "Sub Post Office",
+        "DeliveryStatus": "Non-Delivery",
+        "Circle": "Karnataka",
+        "District": "Bangalore",
+        "Division": "Bangalore South",
+        "Region": "Bangalore HQ",
+        "State": "Karnataka",
+        "Country": "India",
+        "Pincode": "560034"
+      },
+      {
+        "Name": "Koramangala VI Bk",
+        "Description": null,
+        "BranchType": "Sub Post Office",
+        "DeliveryStatus": "Delivery",
+        "Circle": "Karnataka",
+        "District": "Bangalore",
+        "Division": "Bangalore South",
+        "Region": "Bangalore HQ",
+        "State": "Karnataka",
+        "Country": "India",
+        "Pincode": "560095"
+      },
+      {
+        "Name": "Koramangalam",
+        "Description": null,
+        "BranchType": "Branch Post Office",
+        "DeliveryStatus": "Delivery",
+        "Circle": "Tamilnadu",
+        "District": "Tiruvallur",
+        "Division": "Kanchipuram",
+        "Region": "Chennai Region",
+        "State": "Tamil Nadu",
+        "Country": "India",
+        "Pincode": "631205"
+      }
+    ]
+  }
+]

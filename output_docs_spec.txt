@@ -1,0 +1,17 @@
+FAIL pincode_found
+     'Success' is not one of ['SUCCESS', 'ERROR']
+     Additional properties are not allowed ('Block', 'Pincode' were unexpected)
+     None is not of type 'string'
+FAIL pincode_not_found
+     'Error' is not one of ['SUCCESS', 'ERROR']
+FAIL pincode_not_a_number
+     'PostOffice' is a required property
+     Additional properties are not allowed ('RequestUri' was unexpected)
+     '404' is not one of ['SUCCESS', 'ERROR']
+FAIL postoffice_found
+     'Success' is not one of ['SUCCESS', 'ERROR']
+     Additional properties are not allowed ('Pincode' was unexpected)
+     None is not of type 'string'
+FAIL postoffice_not_found
+     'Error' is not one of ['SUCCESS', 'ERROR']
+0 of 5 match the spec

@@ -1,0 +1,5 @@
+pincode_found          HTTP 200  Status='Success'
+pincode_not_found      HTTP 200  Status='Error'
+pincode_not_a_number   HTTP 200  Status='404'
+postoffice_found       HTTP 200  Status='Success'
+postoffice_not_found   HTTP 200  Status='Error'

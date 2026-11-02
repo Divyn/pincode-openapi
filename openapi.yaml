@@ -1,0 +1,123 @@
+openapi: 3.1.0
+info:
+  title: India Post PIN Code API
+  version: "1.0"
+  description: |
+    Written from real responses (see responses/), not from the docs page.
+    Every response is HTTP 200, including errors. Read Status in the body.
+servers:
+  - url: https://api.postalpincode.in
+paths:
+  /pincode/{pincode}:
+    get:
+      summary: Post offices for a PIN code
+      description: A six digit PIN code. Anything that is not a number returns the NotFound shape with Status "404".
+      parameters:
+        - name: pincode
+          in: path
+          required: true
+          schema: {type: string}
+          example: "560034"
+      responses:
+        "200":
+          description: Always 200. Check Status in the body.
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/PincodeResponse"}
+  /postoffice/{name}:
+    get:
+      summary: Post offices for a branch name
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema: {type: string}
+          example: Koramangala
+      responses:
+        "200":
+          description: Always 200. Check Status in the body.
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/PostOfficeResponse"}
+components:
+  schemas:
+    PincodeResponse:
+      type: array
+      minItems: 1
+      maxItems: 1
+      items:
+        oneOf:
+          - $ref: "#/components/schemas/PincodeResult"
+          - $ref: "#/components/schemas/NoRecords"
+          - $ref: "#/components/schemas/NotFound"
+    PostOfficeResponse:
+      type: array
+      minItems: 1
+      maxItems: 1
+      items:
+        oneOf:
+          - $ref: "#/components/schemas/PostOfficeResult"
+          - $ref: "#/components/schemas/NoRecords"
+    PincodeResult:
+      type: object
+      required: [Status, Message, PostOffice]
+      additionalProperties: false
+      properties:
+        Status: {const: Success}
+        Message: {type: string, examples: ["Number of pincode(s) found:4"]}
+        PostOffice:
+          type: array
+          items: {$ref: "#/components/schemas/PostOfficeWithBlock"}
+    PostOfficeResult:
+      type: object
+      required: [Status, Message, PostOffice]
+      additionalProperties: false
+      properties:
+        Status: {const: Success}
+        Message: {type: string, examples: ["Number of Post office(s) found:4"]}
+        PostOffice:
+          type: array
+          items: {$ref: "#/components/schemas/PostOffice"}
+    NoRecords:
+      type: object
+      required: [Status, Message, PostOffice]
+      additionalProperties: false
+      properties:
+        Status: {const: Error}
+        Message: {const: No records found}
+        PostOffice: {type: "null"}
+    NotFound:
+      description: Returned for a PIN code that is not a number. Not on the docs page.
+      type: object
+      required: [Status, Message, RequestUri]
+      additionalProperties: false
+      properties:
+        Status: {const: "404"}
+        Message: {type: string}
+        RequestUri: {type: string}
+    PostOffice:
+      allOf:
+        - $ref: "#/components/schemas/PostOfficeFields"
+      unevaluatedProperties: false
+    PostOfficeFields:
+      type: object
+      required: [Name, BranchType, DeliveryStatus, District, State, Country, Pincode]
+      properties:
+        Name: {type: string, description: Can end in a space, for example "Bangalore ".}
+        Description: {type: ["string", "null"]}
+        BranchType: {type: string, examples: [Head Post Office, Sub Post Office, Branch Post Office]}
+        DeliveryStatus: {enum: [Delivery, Non-Delivery]}
+        Circle: {type: string}
+        District: {type: string}
+        Division: {type: string}
+        Region: {type: string}
+        State: {type: string}
+        Country: {type: string}
+        Pincode: {type: string}
+    PostOfficeWithBlock:
+      description: The PIN code search also returns Block. The branch name search does not.
+      allOf:
+        - $ref: "#/components/schemas/PostOfficeFields"
+      properties:
+        Block: {type: string}
+      unevaluatedProperties: false

@@ -1,0 +1,7 @@
+[
+  {
+    "Status": "404",
+    "Message": "The requested resource is not found",
+    "RequestUri": "https://api.postalpincode.in:443/pincode/abcdef"
+  }
+]

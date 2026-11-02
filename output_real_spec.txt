@@ -1,0 +1,6 @@
+PASS pincode_found
+PASS pincode_not_found
+PASS pincode_not_a_number
+PASS postoffice_found
+PASS postoffice_not_found
+5 of 5 match the spec

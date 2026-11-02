@@ -1,0 +1,65 @@
+openapi: 3.1.0
+info:
+  title: India Post PIN Code API (written from the docs page)
+  version: "1.0"
+  description: First draft, copied from http://www.postalpincode.in/Api-Details
+servers:
+  - url: https://api.postalpincode.in
+paths:
+  /pincode/{pincode}:
+    get:
+      summary: Post offices for a PIN code
+      parameters:
+        - name: pincode
+          in: path
+          required: true
+          schema: {type: string}
+      responses:
+        "200":
+          description: List with one result object
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/Response"}
+  /postoffice/{name}:
+    get:
+      summary: Post offices for a branch name
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema: {type: string}
+      responses:
+        "200":
+          description: List with one result object
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/Response"}
+components:
+  schemas:
+    Response:
+      type: array
+      items:
+        type: object
+        required: [Status, Message, PostOffice]
+        additionalProperties: false
+        properties:
+          Status: {enum: [SUCCESS, ERROR]}
+          Message: {type: string}
+          PostOffice:
+            type: [array, "null"]
+            items: {$ref: "#/components/schemas/PostOffice"}
+    PostOffice:
+      type: object
+      additionalProperties: false
+      properties:
+        Name: {type: string}
+        Description: {type: string}
+        PINCode: {type: string}
+        BranchType: {type: string}
+        DeliveryStatus: {type: string}
+        Circle: {type: string}
+        District: {type: string}
+        Division: {type: string}
+        Region: {type: string}
+        State: {type: string}
+        Country: {type: string}
