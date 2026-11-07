@@ -1,0 +1,9 @@
+Removed from the spec: ERROR, PINCode, SUCCESS
+docs/find-post-offices.md:9: uses SUCCESS
+docs/find-post-offices.md:18: uses SUCCESS
+docs/find-post-offices.md:20: uses PINCode
+docs/find-post-offices.md:23: uses PINCode
+docs/handle-errors.md:5: uses ERROR
+docs/handle-errors.md:9: uses ERROR
+6 stale reference(s) in the guides
+exit code 1

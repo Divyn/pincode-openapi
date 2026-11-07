@@ -1,0 +1,3 @@
+Removed from the spec: ERROR, PINCode, SUCCESS
+0 stale reference(s) in the guides
+exit code 0

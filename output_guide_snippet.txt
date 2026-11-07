@@ -1,0 +1,7 @@
+--- old guide code (SUCCESS, PINCode):
+(exit 0, printed nothing above)
+--- fixed guide code (Success, Pincode):
+Agara 560034
+Koramangala 560034
+Koramangala I Block 560034
+St. John's Medical College 560034

@@ -1,0 +1,21 @@
+name: Docs drift check
+
+on:
+  pull_request:
+    paths: ["openapi.yaml", "docs/**"]
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Save the spec from the main branch
+        run: git show origin/${{ github.base_ref }}:openapi.yaml > /tmp/openapi_main.yaml
+      - name: Check the guides against the spec in this pull request
+        run: python3 drift_check.py /tmp/openapi_main.yaml openapi.yaml docs
